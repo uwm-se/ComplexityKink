@@ -111,4 +111,4 @@ Items that deserve particular attention (flags, not conclusions):
    compilation (matching the source) with a notice that model outputs remain
    subject to their providers' terms, or a more restrictive license if any
    provider term requires it. This choice must also be entered in the Croissant
-   `license` field and the Dataverse terms tab.
+   `license` field.

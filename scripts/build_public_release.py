@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Build the public Complexity Kink dataset release (local build only).
 
-This script assembles the Hugging Face / Harvard Dataverse release of the data
+This script assembles the Hugging Face release of the data
 behind "The Complexity Kink" (NeurIPS 2026 Evaluations & Datasets track) from
 the retained raw bundle. It never uploads anything and never contacts a
 network service. It reads only from ``<data-root>/data`` and writes:
