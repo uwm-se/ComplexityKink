@@ -30,11 +30,11 @@
   ],
   "rai:personalSensitiveInformation": [
     "None of the sensitive categories (gender, socio-economic status, geography, language, age, culture, experience or seniority, health or medical data, political or religious beliefs) is recorded about any person.",
-    "Human rubric grades from two research-team members are released under pseudonymous IDs (grader_1 = first author, grader_2 = second grader); no names, contact details, or demographics are included. Both graders agreed to the public release of their pseudonymous grades.",
+    "Human rubric grades from the two authors are released under pseudonymous IDs (grader_1 = first author, grader_2 = second author); no names, contact details, or demographics are included. Both graders agreed to the public release of their pseudonymous grades.",
     "Prompts, unit tests, and generated code are programming tasks and may contain fictitious names, placeholder email addresses, and placeholder credentials (for example, 'your_api_key_here') inherited from the source dataset or produced by models. A scan of every released text field found no real API keys, bearer tokens, account or deployment identifiers, request identifiers, endpoint URLs, or local filesystem paths belonging to the authors."
   ],
   "rai:dataUseCases": [
-    "Construct measured: (1) the intended structural complexity of a Python programming task, scored from the prompt before any evaluated model generates code (six rubric dimensions, each 0-4, summed to 0-24); and (2) the functional reliability of LLM-generated solutions, measured as the fraction of source unit tests passed. Generated-output cyclomatic complexity is included as a post-generation comparison measure, not as task complexity.",
+    "Construct measured: (1) the intended structural complexity of a Python programming task, scored from the prompt text alone, without seeing generated code or test results (six rubric dimensions, each 0-4, summed to 0-24); and (2) the functional reliability of LLM-generated solutions, measured as the fraction of source unit tests passed. Generated-output cyclomatic complexity is included as a post-generation comparison measure, not as task complexity.",
     "Validated use: reproducing and auditing the paper's analyses, including model-specific and pooled breakpoint estimates, task-type and construction-frame sensitivity, the reverse-threshold (failure-dependent output complexity) diagnostic, and the rater, paraphrase, cross-language, repeated-sampling, and high-complexity-extension checks.",
     "Other intended research uses: evaluating alternative prompt-side complexity measures against the four-judge index and human grades; studying LLM-as-judge reliability for input scoring; studying how failed or unscorable generations bias output-side metrics; test-harness and benchmark-construction audits.",
     "Not intended or validated: setting deployment cutoffs or safety thresholds for code generators; ranking models outside this protocol; treating the rubric dimensions as valid causal instruments (overidentification tests reject); training or fine-tuning code models on these prompts or generations, which would contaminate future evaluation."
@@ -133,12 +133,12 @@
     {
       "@type": "prov:Activity",
       "prov:label": "Blinded human calibration",
-      "description": "A 500-prompt calibration pool was drawn with seed 20260724, balanced over six ensemble-composite bands with half of each band taken from the highest judge-disagreement prompts. The first author graded 200 prompts from a seeded shuffle and a second research-team member graded the first 50 of those, using an offline grading page that showed the prompt, tests, and rubric but hid all LLM scores.",
+      "description": "A 500-prompt calibration pool was drawn with seed 20260724, balanced over six ensemble-composite bands with half of each band taken from the highest judge-disagreement prompts. The first author graded 200 prompts from a seeded shuffle and the second author graded the first 50 of those, using an offline grading page that showed the prompt, tests, and rubric but hid all LLM scores.",
       "prov:endedAtTime": "2026-07-26T14:31:14Z",
       "prov:wasAssociatedWith": [
         {
           "@type": "prov:Agent",
-          "prov:label": "Two research-team graders (pseudonymous)"
+          "prov:label": "The two authors (pseudonymous graders)"
         }
       ]
     },
@@ -161,7 +161,7 @@
       "description": "scripts/build_public_release.py joined the retained per-model scored files with the current four-judge aggregate (asserting exactly 5,000 prompts per model), excluded the 24-bin set and all non-final candidate rows, dropped raw API responses and all request, batch, deployment, endpoint, credential, and local-path fields, pseudonymized human graders, recomputed harness pass rates from per-test outcomes, and wrote one Parquet file per config."
     }
   ],
-  "rai:dataCollection": "Prompts, reference-solution metadata, and unit tests were taken from OpenCodeInstruct. All other content was produced for this study: LLM rubric scores, LLM generations and their executed test outcomes, LLM task-type labels, LLM paraphrases and language re-expressions, and blinded human rubric grades from two research-team members.",
+  "rai:dataCollection": "Prompts, reference-solution metadata, and unit tests were taken from OpenCodeInstruct. All other content was produced for this study: LLM rubric scores, LLM generations and their executed test outcomes, LLM task-type labels, LLM paraphrases and language re-expressions, and blinded human rubric grades from the two authors.",
   "rai:dataCollectionType": [
     "Secondary data: existing public dataset (OpenCodeInstruct)",
     "Machine-generated: LLM outputs (generations, rubric scores, labels, rewrites)",
