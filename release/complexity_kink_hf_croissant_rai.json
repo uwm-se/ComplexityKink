@@ -4264,7 +4264,7 @@
     "Judge bias: the four rubric judges share common-mode tendencies that averaging cannot remove. Relative to the first human grader, the ensemble scores higher on average (mean composite offset -1.18 points human minus LLM), especially on data structures, composition, and edge cases.",
     "Outcome-measurement bias: the o4-mini harness-audit override was applied only to earlier_retained rows, and test-suite quality differs between frames, so pass rates are not measured identically across the two construction frames.",
     "Panel composition: the 21 evaluated models were chosen by availability and budget. Closed models were queried through hosted APIs while several open-weight models were run as quantized local builds, which can understate those models' capability relative to their full-precision versions.",
-    "Human calibration sample: both graders are members of the research team, and half of the 500-prompt calibration pool was drawn from the prompts with the highest judge disagreement, so agreement statistics are a stress test rather than an average-case estimate."
+    "Human calibration sample: both graders are the paper's authors, and half of the 500-prompt calibration pool was drawn from the prompts with the highest judge disagreement, so agreement statistics are a stress test rather than an average-case estimate."
   ],
   "rai:personalSensitiveInformation": [
     "None of the sensitive categories (gender, socio-economic status, geography, language, age, culture, experience or seniority, health or medical data, political or religious beliefs) is recorded about any person.",
@@ -4430,7 +4430,7 @@
   ],
   "rai:annotationsPerItem": "Four LLM judge scores per main and extension prompt (4,998 main prompts complete; one prompt with three and one with two). Human grades: one grade for 150 prompts and two grades for 50 prompts. Task type: one label per prompt, four labels for a 500-prompt subset.",
   "rai:annotatorDemographics": [
-    "Two human graders, both members of the research team with Python programming experience; no demographic information was collected."
+    "Two human graders, the paper's two authors with Python programming experience; no demographic information was collected."
   ],
   "rai:machineAnnotationTools": [
     "o4-mini, gpt-5.5, Llama 4 Maverick, and Command A via Azure AI Foundry (rubric judges; task-type labelers)",
